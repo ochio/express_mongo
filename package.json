@@ -1,5 +1,5 @@
 {
-  "name": "weblog",
+  "name": "express_mongo",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.10.0"
+  }
 }
