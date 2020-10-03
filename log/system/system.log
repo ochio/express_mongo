@@ -8,3 +8,21 @@
     15| 			<div class="border-bottom mt-5 mb-5">
 
 Could not find the include file "./_share/navbar.ejs"
+[2020-10-03T15:36:44.877] [ERROR] system - /Users/ochitakafumi/Documents/cording/training/udemy/express_mongo/views/search/list.ejs:21
+    19| 
+    20| 			<div class="mt-5 mb-5">
+ >> 21| 				<% for (const item of list){ %>
+    22| 				<%- include("./item.ejs", item)%>
+    23| 				<% } %>
+    24| 			</div>
+
+list is not defined
+[2020-10-03T15:36:56.129] [ERROR] system - /Users/ochitakafumi/Documents/cording/training/udemy/express_mongo/views/search/list.ejs:21
+    19| 
+    20| 			<div class="mt-5 mb-5">
+ >> 21| 				<% for (var item of list){ %>
+    22| 				<%- include("./item.ejs", item)%>
+    23| 				<% } %>
+    24| 			</div>
+
+list is not defined
