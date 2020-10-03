@@ -1,0 +1,2 @@
+[2020-10-03T13:32:22.159] [ERROR] access - ::1 - - "GET /posts/5f6dad788d3a7c0007393ff7 HTTP/1.1" 404 169 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
+[2020-10-03T13:32:26.558] [INFO] access - ::1 - - "GET / HTTP/1.1" 200 1546 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
