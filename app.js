@@ -15,6 +15,7 @@ app.use(accesslogger());
 app.use("/", require("./routes/index"));
 app.use("/posts/", require("./routes/posts.js"));
 app.use("/search", require("./routes/search.js"));
+app.use("/account", require("./routes/account.js"));
 
 app.use(systemlogger());
 
