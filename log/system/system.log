@@ -26,3 +26,12 @@ list is not defined
     24| 			</div>
 
 list is not defined
+[2020-10-03T16:17:07.596] [ERROR] system - /Users/ochitakafumi/Documents/cording/training/udemy/express_mongo/views/search/list.ejs:32
+    30| 			<nan>
+    31| 				<ul class="pagination">
+ >> 32| 					<% for( i = 0; i <= pagination.max; i++) {%>
+    33| 						<% if(pagination.current !== i) {%>
+    34| 						<li class="page-item"><a class="page-link" href="/search/?keyword=<%= keyword %>&<%= i %>"><% i %></a></li>
+    35| 						<% } else { %>
+
+pagination is not defined

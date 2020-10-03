@@ -12,6 +12,10 @@
 		<%- include("../_share/navbar.ejs") %>
 		<main role="main" class="container">
 
+			<div class="float-right">
+				<span class="badge badge-secondary"><%= count %>件</span>
+			</div>
+
 			<form action="/search" class="form-inline mt-5 mb-5" method="GET">
 				<input class="form-control" type="text" id="keyword" name="keyword" value="<%= keyword %>">
 				<input class="btn btn-default ml-2" type="submit" value="検索">
@@ -22,6 +26,18 @@
 				<%- include("./item.ejs", item)%>
 				<% } %>
 			</div>
+
+			<nan>
+				<ul class="pagination">
+					<% for( i = 1; i <= pagination.max; i++) {%>
+						<% if(pagination.current !== i) {%>
+						<li class="page-item"><a class="page-link" href="/search/?keyword=<%= keyword %>&page=<%= i %>"><%= i %></a></li>
+						<% } else { %>
+						<li class="page-item active"><span class="page-link disabled"><%= i %></span></li>
+						<% } %>
+					<% } %>
+				</ul>
+			</nan>
 
 		</main><!-- /.container -->
 		<%- include("../_share/javascripts.ejs") %>
