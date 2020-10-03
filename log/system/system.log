@@ -1,1 +1,10 @@
 [2020-09-30T23:05:51.413] [ERROR] system - sample
+[2020-10-03T15:01:04.230] [ERROR] system - /Users/ochitakafumi/Documents/cording/training/udemy/express_mongo/views/posts/index.ejs:12
+    10|   </head>
+    11|   <body>
+ >> 12| 		<%- include("./_share/navbar.ejs") %>
+    13| 		<main role="main" class="container">
+    14| 
+    15| 			<div class="border-bottom mt-5 mb-5">
+
+Could not find the include file "./_share/navbar.ejs"
