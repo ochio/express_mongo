@@ -1,6 +1,7 @@
 const {CONNECTION_URL, OPTIONS, DATABASE} = require("../config/mongodb.config");
 const router = require("express").Router();
 const MongoClient = require("mongodb").MongoClient;
+const tokens = new require("csrf")();
 
 const validateRegistData = function(body){
   let isValidated = true;
@@ -41,7 +42,12 @@ router.get("/", (req, res) => {
 });
 
 router.get("/posts/regist", (req, res) => {
-  res.render("./account/posts/regist-form.ejs");
+  tokens.secret((error, secret) => {
+    const token = tokens.create(secret);
+    req.session._csrf = secret;
+    res.cookie("_csrf", token);
+    res.render("./account/posts/regist-form.ejs");
+  });
 });
 
 router.post("/posts/regist/input", (req, res) => {
@@ -60,6 +66,14 @@ router.post("/posts/regist/confirm", (req, res) => {
 });
 
 router.post("/posts/regist/execute", (req, res) => {
+
+  const secret = req.session._csrf;
+  const token = req.cookies._csrf;
+	
+  if(tokens.verify(secret, token) === false){
+    throw new Error("Invalid Token");
+  }
+
   const original = createRegistData(req.body);
   const errors = validateRegistData(req.body);
   if(errors){
@@ -71,6 +85,8 @@ router.post("/posts/regist/execute", (req, res) => {
     const db = client.db(DATABASE);
     db.collection("posts").insertOne((original))
       .then(() => {
+        delete req.session._csrf;
+        res.clearCookie("_csrf");
         res.render("./account/posts/regist-complete.ejs");
       }).catch((error) => {
         throw error;

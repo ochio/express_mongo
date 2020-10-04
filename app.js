@@ -1,7 +1,10 @@
+const {SESSION_SECRET} = require("./config/app.config").security;
 const accesslogger = require("./lib/log/accesslogger");
 const systemlogger = require("./lib/log/systemlogger");
 const express = require("express");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
 const app = express();
 
 app.set("view engine", "ejs");
@@ -13,6 +16,13 @@ app.use("/public", express.static(__dirname + "/public/" + (process.env.NODE_ENV
 // この場所でaccesslogerを読み込む
 app.use(accesslogger());
 
+app.use(cookieParser());
+app.use(session({
+  secret: SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true,
+  name: "sid"
+}));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
