@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "gulp": "gulp",
+    "dev": "export NODE_ENV=development && node app",
     "build-dev": "export NODE_ENV=development && gulp",
     "build-prod": "export NODE_ENV=production && gulp"
   },
