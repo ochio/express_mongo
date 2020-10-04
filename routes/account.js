@@ -1,4 +1,6 @@
+const {CONNECTION_URL, OPTIONS, DATABASE} = require("../config/mongodb.config");
 const router = require("express").Router();
+const MongoClient = require("mongodb").MongoClient;
 
 const validateRegistData = function(body){
   let isValidated = true;
@@ -55,6 +57,27 @@ router.post("/posts/regist/confirm", (req, res) => {
     return;
   }
   res.render("./account/posts/regist-confirm.ejs", {original});
+});
+
+router.post("/posts/regist/execute", (req, res) => {
+  const original = createRegistData(req.body);
+  const errors = validateRegistData(req.body);
+  if(errors){
+    res.render("./account/posts/regist-form.ejs", {errors,original});
+    return;
+  }
+	
+  MongoClient.connect(CONNECTION_URL, OPTIONS, (error, client) => {
+    const db = client.db(DATABASE);
+    db.collection("posts").insertOne((original))
+      .then(() => {
+        res.render("./account/posts/regist-complete.ejs");
+      }).catch((error) => {
+        throw error;
+      }).then(() => {
+        client.close();
+      });
+  });
 });
 
 module.exports = router;
