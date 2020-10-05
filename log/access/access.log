@@ -7,3 +7,8 @@
 [2020-10-06T00:07:18.557] [INFO] access - ::1 - - "GET /api/posts/2017/05/hello-nodejs.html HTTP/1.1" 200 246 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
 [2020-10-06T00:07:23.595] [INFO] access - ::1 - - "GET /api/posts/2017/05/hello-nodejs.html HTTP/1.1" 200 246 "" "PostmanRuntime/7.26.5"
 [2020-10-06T00:07:32.720] [INFO] access - ::1 - - "GET /api/posts/2017/05/hello-nodejs.html HTTP/1.1" 200 246 "" "PostmanRuntime/7.26.5"
+[2020-10-06T00:14:52.366] [INFO] access - ::1 - - "GET / HTTP/1.1" 200 1328 "" "PostmanRuntime/7.26.5"
+[2020-10-06T00:15:04.470] [INFO] access - ::1 - - "GET /search HTTP/1.1" 200 2457 "" "PostmanRuntime/7.26.5"
+[2020-10-06T00:15:17.771] [INFO] access - ::1 - - "GET /search HTTP/1.1" 200 2457 "" "PostmanRuntime/7.26.5"
+[2020-10-06T00:15:34.046] [INFO] access - ::1 - - "GET /search HTTP/1.1" 200 2457 "" "PostmanRuntime/7.26.5"
+[2020-10-06T00:15:58.999] [INFO] access - ::1 - - "GET /api/posts/2017/05/hello-nodejs.html HTTP/1.1" 200 246 "" "PostmanRuntime/7.26.5"
