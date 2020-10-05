@@ -6,6 +6,7 @@
   "scripts": {
     "gulp": "gulp",
     "dev": "export NODE_ENV=development && node app",
+    "dev:prod": "export NODE_ENV=production && node app",
     "build-dev": "export NODE_ENV=development && gulp",
     "build-prod": "export NODE_ENV=production && gulp"
   },

@@ -1,0 +1,1 @@
+"use strict";var btnSubmit_onClick=function(){var t=$(this),n=t.parents("form");n.attr("method",t.data("method")),n.attr("action",t.data("action")),n.submit(),t.off().prop("disabled",!0),n.on("submit",!1)},document_onready=function(){$("input[type='submit").on("click",btnSubmit_onClick)};$(document).ready(document_onready);
